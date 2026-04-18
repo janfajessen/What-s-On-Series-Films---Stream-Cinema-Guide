@@ -1,13 +1,27 @@
-# What's On Series & Films — Home Assistant Integration
+<div align="center">
 
-[![What's On Series & Films](https://github.com/janfajessen/whatson_series_films/raw/main/whatson_series_films_icon.png)](https://github.com/janfajessen/whatson_series_films)
+# What's On Series & Films 
+## Stream and Cinema Guide <br> Home Assistant Integration
 
-[![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2026.x-41bdf5.svg?style=for-the-badge)](https://www.home-assistant.io/)
-[![HACS Custom](https://img.shields.io/badge/HACS-Custom-41bdf5.svg?style=for-the-badge)](https://hacs.xyz/docs/publish/start)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow.svg?style=for-the-badge)](https://www.buymeacoffee.com/janfajessen)
-[![Patreon](https://img.shields.io/badge/Patreon-Support-red.svg?style=for-the-badge)](https://www.patreon.com/janfajessen)
+<img src="brands/logo@2x.png" width="550"/>
+
+![Version](https://img.shields.io/badge/version-1.5.24-blue?style=for-the-badge)
+![HA](https://img.shields.io/badge/Home%20Assistant-2024.1+-orange?style=for-the-badge&logo=home-assistant)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python)
+![HACS](https://img.shields.io/badge/HACS-Custom-41BDF5?style=for-the-badge&logo=homeassistantcommunitystore&logoColor=white)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-yellow?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/janfajessen)
+[![Patreon](https://img.shields.io/badge/Patreon-Support-red?style=for-the-badge&logo=patreon)](https://www.patreon.com/janfajessen)
+<!--[![Ko-Fi](https://img.shields.io/badge/Ko--Fi-Support-teal?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/janfajessen)
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Support-pink?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/janfajessen)
+
+
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?style=for-the-badge&logo=paypal)](https://paypal.me/janfajessen)-->
+
 
 Qué hay en series y películas - ما الذي يعرض في المسلسلات والأفلام - Nə var seriallar və filmlər - Što ima u serijama i filmovima - Какво има в сериали и филми - Što ima u serijama i filmovima - Què hi ha en sèries i pel·lícules - Co je v seriálech a filmech - Hvad er der i serier og film - Was gibt es in Serien und Filmen - Τι παίζει σε σειρές και ταινίες - Qué hay en series y películas - Serietan eta filmetan zer dago - چه چیزی در سریال‌ها و فیلم‌هاست - Mitä sarjoissa ja elokuvissa on - Quoi dans les séries et films - Que hai nas series e filmes - מה יש בסדרות ובסרטים - सीरीज और फिल्मों में क्या है - Što ima u serijama i filmovima - Mi van a sorozatokban és filmekben - Apa yang ada di serial dan film - Hvað er í þáttum og kvikmyndum - Cosa c'è in serie e film - シリーズと映画に何があるか - რა არის სერიალებსა და ფილმებში - Что идёт в сериалах и фильмах - 시리즈와 영화에 무엇이 있나요 - Kas yra serialuose ir filmuose - Kas ir seriālos un filmās - Wat is er in series en films - Hva er i serier og filmer - Co jest w serialach i filmach - O que há nas séries e filmes - Ce este în seriale și filme - Що є у серіалах та фільмах - Čo je v seriáloch a filmoch - Kaj je v serijah in filmih - Çfarë ka në serialet dhe filmat - Шта има у серијама и филмовима - Vad finns det i serier och filmer - อะไรอยู่ในซีรีส์และภาพยนตร์ - Dizilerde ve filmlerde ne var - Có gì trong phim bộ và phim điện ảnh - 剧集和电影中有什么
+
+</div>
 
 ## 🍿 Never miss a premiere, a new season, or a cinema release
 
