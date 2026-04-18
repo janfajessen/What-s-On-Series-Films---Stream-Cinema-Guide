@@ -53,7 +53,7 @@ Qué hay en series y películas - ما الذي يعرض في المسلسلات
 
 ### 🏟️ Cinema — what's playing near you (TMDB)
 
-* **Weekend plans?** The `cinema_now_playing` sensor shows all films currently in cinemas in your country, with ratings and overviews
+* **Weekend plans?** The `cinema_now_playing` sensor shows all films currently in cinemas in your country, not specificaly in your region,  with ratings and overviews
 * **Planning ahead?** `cinema_upcoming` shows confirmed releases for the coming weeks — useful for buying tickets early
 * **Living in a small country like Andorra?** The integration automatically falls back to global release data when regional data isn't available, and marks items with `region_fallback: true` so your card can display a note
 * **Automate your Friday routine:** trigger an automation every Friday evening that sends you a formatted list of new cinema releases via Telegram — your personal weekly film bulletin
