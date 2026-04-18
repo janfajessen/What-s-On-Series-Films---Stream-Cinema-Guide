@@ -1,0 +1,132 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Clave API de TMDB",
+        "description": "Introduce tu clave API gratuita de TMDB para activar las funciones de streaming y cine. Deja el campo vacío para usar solo TVmaze (no requiere clave).\n\nObtén una clave gratuita en [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Developer → Uso personal.",
+        "data": {
+          "tmdb_api_key": "Clave API de TMDB (opcional)"
+        }
+      },
+      "country": {
+        "title": "País e idioma",
+        "description": "Selecciona tu país de la lista de países soportados por TMDB. El idioma para títulos y descripciones se detecta automáticamente — soló cambia si es necesario.",
+        "data": {
+          "country": "País",
+          "language": "Idioma (opcional — detección automática)"
+        }
+      },
+      "platforms": {
+        "title": "Plataformas de streaming",
+        "description": "Estas son las plataformas disponibles en tu país según TMDB. Selecciona las que tengas contratadas.",
+        "data": {
+          "platforms": "Plataformas de streaming"
+        }
+      },
+      "tvmaze": {
+        "title": "Seguir una serie o documental",
+        "description": "Escribe un nombre para buscar en TVmaze. Deja vacío para terminar sin añadir ninguna serie.",
+        "data": {
+          "show_name": "Nombre de la serie o documental"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selecciona la serie o documental",
+        "description": "Elige el resultado correcto de la lista.",
+        "data": {
+          "show_id": "Serie / Documental"
+        }
+      },
+      "add_another": {
+        "title": "¿Añadir otra serie o documental?",
+        "description": "Añadidos hasta ahora: **{shows_added}**",
+        "data": {
+          "add_another": "Añadir otra serie o documental"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigurar What’s On Series & Films",
+        "description": "Actualiza tu clave API de TMDB. La selección de país y plataformas continuará en las siguientes pantallas.",
+        "data": {
+          "tmdb_api_key": "Clave API de TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Clave API de TMDB no válida o servicio no disponible.",
+      "no_results": "No se encontraron resultados. Prueba con otra ortografía.",
+      "cannot_connect": "No se puede conectar. Comprueba tu conexión a internet."
+    },
+    "abort": {
+      "already_configured": "Este país ya está configurado. Usa las opciones (⚙) para gestionarlo, o añade una nueva entrada para otro país.",
+      "reconfigure_successful": "Reconfiguración completada correctamente."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What’s On Series & Films — Opciones",
+        "description": "¿Qué deseas hacer?",
+        "data": {
+          "action": "Acción"
+        }
+      },
+      "tvmaze": {
+        "title": "Añadir una serie o documental",
+        "description": "Busca la serie o documental en TVmaze.",
+        "data": {
+          "show_name": "Nombre de la serie o documental"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selecciona la serie o documental",
+        "data": {
+          "show_id": "Serie / Documental"
+        }
+      },
+      "remove_show": {
+        "title": "Eliminar una serie o documental",
+        "description": "Selecciona la que quieres dejar de seguir.",
+        "data": {
+          "show_id": "Serie / Documental"
+        }
+      },
+      "update_platforms": {
+        "title": "Cambiar plataformas de streaming",
+        "description": "La lista se obtiene en tiempo real de TMDB para tu país.",
+        "data": {
+          "platforms": "Plataformas de streaming"
+        }
+      },
+      "update_tmdb": {
+        "title": "Actualizar clave TMDB / país / idioma",
+        "description": "La lista de países se obtiene en tiempo real de TMDB.",
+        "data": {
+          "tmdb_api_key": "Clave API de TMDB",
+          "country": "País",
+          "language": "Idioma (opcional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Clave API de TMDB no válida o servicio no disponible.",
+      "no_results": "No se encontraron resultados."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Estado",
+        "state": {
+          "Running": "En emisión",
+          "Ended": "Finalizada",
+          "To Be Determined": "Por determinar",
+          "In Development": "En desarrollo",
+          "Canceled/Ended": "Cancelada",
+          "In Limbo": "En pausa",
+          "Unknown": "Desconocido"
+        }
+      }
+    }
+  }
+}

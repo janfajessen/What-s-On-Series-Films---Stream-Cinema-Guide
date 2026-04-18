@@ -43,6 +43,13 @@
         "data": {
           "add_another": "Add another series or doc"
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigure What's On Series & Films",
+        "description": "Update your TMDB API key. The country and platform selection will follow on the next screens.",
+        "data": {
+          "tmdb_api_key": "TMDB API Key"
+        }
       }
     },
     "error": {
@@ -51,7 +58,8 @@
       "cannot_connect": "Cannot connect. Check your internet connection."
     },
     "abort": {
-      "already_configured": "This country is already configured. Use options (⚙) to manage it, or add a new entry for a different country."
+      "already_configured": "This country is already configured. Use options (⚙) to manage it, or add a new entry for a different country.",
+      "reconfigure_successful": "Reconfiguration successful."
     }
   },
   "options": {
