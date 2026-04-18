@@ -1,0 +1,124 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API Key",
+        "description": "Enter your free TMDB API key to enable streaming and cinema features. Leave empty to use TVmaze only (no key needed).\n\nGet a free key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Developer → Personal use.",
+        "data": {
+          "tmdb_api_key": "TMDB API Key (optional)"
+        }
+      },
+      "country": {
+        "title": "Country & Language",
+        "description": "Select your country from the list of countries supported by TMDB. The language for titles and descriptions is auto-detected — override only if needed.",
+        "data": {
+          "country": "Country",
+          "language": "Language (optional — auto-detected from country)"
+        }
+      },
+      "platforms": {
+        "title": "Streaming Platforms",
+        "description": "These are the platforms available in your country according to TMDB. Select the ones you subscribe to.",
+        "data": {
+          "platforms": "Streaming Platforms"
+        }
+      },
+      "tvmaze": {
+        "title": "Track a Series or Doc",
+        "description": "Type a name to search TVmaze. Leave empty to finish without adding any series.",
+        "data": {
+          "show_name": "Series / Doc name"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Select Series / Doc",
+        "description": "Choose the correct result from the list.",
+        "data": {
+          "show_id": "Series / Doc"
+        }
+      },
+      "add_another": {
+        "title": "Add Another Series or Doc?",
+        "description": "Added so far: **{shows_added}**",
+        "data": {
+          "add_another": "Add another series or doc"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Invalid TMDB API key or service unreachable.",
+      "no_results": "No results found. Try a different spelling.",
+      "cannot_connect": "Cannot connect. Check your internet connection."
+    },
+    "abort": {
+      "already_configured": "This country is already configured. Use options (⚙) to manage it, or add a new entry for a different country."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What’s On Series & Films — Options",
+        "description": "What would you like to do?",
+        "data": {
+          "action": "Action"
+        }
+      },
+      "tvmaze": {
+        "title": "Add a Series or Doc",
+        "description": "Search TVmaze for the series or documentary you want to track.",
+        "data": {
+          "show_name": "Series / Doc name"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Select Series / Doc",
+        "data": {
+          "show_id": "Series / Doc"
+        }
+      },
+      "remove_show": {
+        "title": "Remove a Series or Doc",
+        "description": "Select the one to stop tracking.",
+        "data": {
+          "show_id": "Series / Doc"
+        }
+      },
+      "update_platforms": {
+        "title": "Change Streaming Platforms",
+        "description": "The list is fetched live from TMDB for your country.",
+        "data": {
+          "platforms": "Streaming Platforms"
+        }
+      },
+      "update_tmdb": {
+        "title": "Update TMDB Key / Country / Language",
+        "description": "The country list is fetched live from TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API Key",
+          "country": "Country",
+          "language": "Language (optional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Invalid TMDB API key or service unreachable.",
+      "no_results": "No results found."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Running",
+          "Ended": "Ended",
+          "To Be Determined": "To Be Determined",
+          "In Development": "In Development",
+          "Canceled/Ended": "Canceled",
+          "In Limbo": "In Limbo",
+          "Unknown": "Unknown"
+        }
+      }
+    }
+  }
+}

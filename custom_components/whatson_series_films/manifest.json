@@ -1,0 +1,13 @@
+{
+  "domain": "whatson_series_films",
+  "name": "What's On Series & Films",
+  "version": "1.0.0",
+  "config_flow": true,
+  "documentation": "https://github.com/janfajessen/whatson_series_films",
+  "issue_tracker": "https://github.com/janfajessen/whatson_series_films/issues",
+  "codeowners": ["@janfajessen"],
+  "requirements": [],
+  "dependencies": [],
+  "iot_class": "cloud_polling",
+  "homekit": {}
+}
