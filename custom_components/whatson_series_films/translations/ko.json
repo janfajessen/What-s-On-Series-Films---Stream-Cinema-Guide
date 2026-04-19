@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API 키",
+        "description": "스트리밍 및 영화 기능을 활성화하려면 무료 TMDB API 키를 입력하세요. TVmaze만 사용하려면 비워 두세요(키 필요 없음).\n\n[themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → 개발자 → 개인 사용에서 무료 키를 받으세요.",
+        "data": {
+          "tmdb_api_key": "TMDB API 키(선택 사항)"
+        }
+      },
+      "country": {
+        "title": "국가 및 언어",
+        "description": "TMDB에서 지원하는 국가 목록에서 국가를 선택하세요. 제목 및 설명의 언어는 자동으로 감지됩니다 — 필요한 경우에만 재정의하세요.",
+        "data": {
+          "country": "국가",
+          "language": "언어(선택 사항 — 국가에서 자동 감지)"
+        }
+      },
+      "platforms": {
+        "title": "스트리밍 플랫폼",
+        "description": "TMDB에 따르면 귀하의 국가에서 사용 가능한 플랫폼입니다. 구독 중인 플랫폼을 선택하세요.",
+        "data": {
+          "platforms": "스트리밍 플랫폼"
+        }
+      },
+      "tvmaze": {
+        "title": "시리즈 또는 다큐멘터리 추적",
+        "description": "TVmaze를 검색할 이름을 입력하세요. 시리즈를 추가하지 않고 완료하려면 비워 두세요.",
+        "data": {
+          "show_name": "시리즈 / 다큐멘터리 이름"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "시리즈 / 다큐멘터리 선택",
+        "description": "목록에서 올바른 결과를 선택하세요.",
+        "data": {
+          "show_id": "시리즈 / 다큐멘터리"
+        }
+      },
+      "add_another": {
+        "title": "다른 시리즈 또는 다큐멘터리를 추가하시겠습니까?",
+        "description": "지금까지 추가됨: **{shows_added}**",
+        "data": {
+          "add_another": "다른 시리즈 또는 다큐멘터리 추가"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films 재구성",
+        "description": "TMDB API 키를 업데이트하세요. 국가 및 플랫폼 선택은 다음 화면에서 계속됩니다.",
+        "data": {
+          "tmdb_api_key": "TMDB API 키"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "유효하지 않은 TMDB API 키 또는 서비스에 연결할 수 없습니다.",
+      "no_results": "결과를 찾을 수 없습니다. 다른 철자로 시도하세요.",
+      "cannot_connect": "연결할 수 없습니다. 인터넷 연결을 확인하세요."
+    },
+    "abort": {
+      "already_configured": "이 국가는 이미 구성되어 있습니다. 옵션(⚙)을 사용하여 관리하거나 다른 국가에 대한 새 항목을 추가하세요.",
+      "reconfigure_successful": "재구성이 성공했습니다."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — 옵션",
+        "description": "무엇을 하시겠습니까?",
+        "data": {
+          "action": "작업"
+        }
+      },
+      "tvmaze": {
+        "title": "시리즈 또는 다큐멘터리 추가",
+        "description": "추적하려는 시리즈 또는 다큐멘터리를 TVmaze에서 검색하세요.",
+        "data": {
+          "show_name": "시리즈 / 다큐멘터리 이름"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "시리즈 / 다큐멘터리 선택",
+        "data": {
+          "show_id": "시리즈 / 다큐멘터리"
+        }
+      },
+      "remove_show": {
+        "title": "시리즈 또는 다큐멘터리 제거",
+        "description": "추적을 중지할 항목을 선택하세요.",
+        "data": {
+          "show_id": "시리즈 / 다큐멘터리"
+        }
+      },
+      "update_platforms": {
+        "title": "스트리밍 플랫폼 변경",
+        "description": "목록은 귀하의 국가에 대해 TMDB에서 실시간으로 가져옵니다.",
+        "data": {
+          "platforms": "스트리밍 플랫폼"
+        }
+      },
+      "update_tmdb": {
+        "title": "TMDB 키 / 국가 / 언어 업데이트",
+        "description": "국가 목록은 TMDB에서 실시간으로 가져옵니다.",
+        "data": {
+          "tmdb_api_key": "TMDB API 키",
+          "country": "국가",
+          "language": "언어(선택 사항)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "유효하지 않은 TMDB API 키 또는 서비스에 연결할 수 없습니다.",
+      "no_results": "결과를 찾을 수 없습니다."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "상태",
+        "state": {
+          "Running": "방송 중",
+          "Ended": "종료됨",
+          "To Be Determined": "미정",
+          "In Development": "개발 중",
+          "Canceled/Ended": "취소됨",
+          "In Limbo": "보류 중",
+          "Unknown": "알 수 없음"
+        }
+      }
+    }
+  }
+}
