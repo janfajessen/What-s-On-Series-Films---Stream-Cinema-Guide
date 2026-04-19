@@ -28,6 +28,7 @@ Qué hacen en streaming y en el cine - ما الذي يعرض في البث ال
 ## 🍿 Never miss a premiere, a new season, or a cinema release
 
 > **Highly recommended companion:**
+
 > 📺 [What's On TV — EPG TV Guide](https://github.com/janfajessen/What-s-On-TV---EPG-TV-Guide) — live TV guide in Home Assistant integration.
 
 > 📺 [What's On Series and Films Lovelace Card](https://github.com/janfajessen/What-s-On-Series-Films-card---Home-Assistant) —  Now & Soon Playing in Cinemas, Platforms Streaming new series, docs & movies guide, follow favorite series. Home Assistant Lovelace Card.
