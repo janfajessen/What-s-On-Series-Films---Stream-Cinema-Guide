@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Allwedd API TMDB",
+        "description": "Rhowch eich allwedd API TMDB am ddim i alluogi nodweddion ffrydio a sinema. Gadewch yn wag i ddefnyddio TVmaze yn unig (dim angen allwedd).\n\nCewch allwedd am ddim yn [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Datblygwr → Defnydd personol.",
+        "data": {
+          "tmdb_api_key": "Allwedd API TMDB (dewisol)"
+        }
+      },
+      "country": {
+        "title": "Gwlad ac Iaith",
+        "description": "Dewiswch eich gwlad o'r rhestr o wledydd a gefnogir gan TMDB. Mae'r iaith ar gyfer teitlau a disgrifiadau yn cael ei chanfod yn awtomatig — gorchuddiwch dim ond os oes angen.",
+        "data": {
+          "country": "Gwlad",
+          "language": "Iaith (dewisol — wedi'i chanfod o'r wlad)"
+        }
+      },
+      "platforms": {
+        "title": "Llwyfannau Ffrydio",
+        "description": "Dyma'r llwyfannau sydd ar gael yn eich gwlad yn ôl TMDB. Dewiswch y rhai rydych chi wedi tanysgrifio iddynt.",
+        "data": {
+          "platforms": "Llwyfannau Ffrydio"
+        }
+      },
+      "tvmaze": {
+        "title": "Olrhain Cyfres neu Ddogfen",
+        "description": "Teipiwch enw i chwilio TVmaze. Gadewch yn wag i orffen heb ychwanegu unrhyw gyfres.",
+        "data": {
+          "show_name": "Enw Cyfres / Dogfen"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Dewis Cyfres / Dogfen",
+        "description": "Dewiswch y canlyniad cywir o'r rhestr.",
+        "data": {
+          "show_id": "Cyfres / Dogfen"
+        }
+      },
+      "add_another": {
+        "title": "Ychwanegu Cyfres neu Ddogfen Arall?",
+        "description": "Wedi'u hychwanegu hyd yn hyn: **{shows_added}**",
+        "data": {
+          "add_another": "Ychwanegu cyfres neu ddogfen arall"
+        }
+      },
+      "reconfigure": {
+        "title": "Ailffurfweddu What's On Series & Films",
+        "description": "Diweddarwch eich allwedd API TMDB. Bydd y dewis o wlad a llwyfan yn dilyn ar y sgriniau nesaf.",
+        "data": {
+          "tmdb_api_key": "Allwedd API TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Allwedd API TMDB annilys neu gwasanaeth yn anhygyrch.",
+      "no_results": "Heb ganfod canlyniadau. Rhowch gynnig ar sillafiad gwahanol.",
+      "cannot_connect": "Ni ellir cysylltu. Gwiriwch eich cysylltiad rhyngrwyd."
+    },
+    "abort": {
+      "already_configured": "Mae'r wlad hon eisoes wedi'i ffurfweddu. Defnyddiwch opsiynau (⚙) i'w rheoli, neu ychwanegwch gofnod newydd ar gyfer gwlad wahanol.",
+      "reconfigure_successful": "Ailffurfweddu'n llwyddiannus."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opsiynau",
+        "description": "Beth hoffech chi ei wneud?",
+        "data": {
+          "action": "Gweithred"
+        }
+      },
+      "tvmaze": {
+        "title": "Ychwanegu Cyfres neu Ddogfen",
+        "description": "Chwiliwch TVmaze am y gyfres neu'r ddogfen rydych chi am ei holrhain.",
+        "data": {
+          "show_name": "Enw Cyfres / Dogfen"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Dewis Cyfres / Dogfen",
+        "data": {
+          "show_id": "Cyfres / Dogfen"
+        }
+      },
+      "remove_show": {
+        "title": "Dileu Cyfres neu Ddogfen",
+        "description": "Dewiswch yr un i roi'r gorau i'w holrhain.",
+        "data": {
+          "show_id": "Cyfres / Dogfen"
+        }
+      },
+      "update_platforms": {
+        "title": "Newid Llwyfannau Ffrydio",
+        "description": "Mae'r rhestr yn cael ei nôl yn fyw o TMDB ar gyfer eich gwlad.",
+        "data": {
+          "platforms": "Llwyfannau Ffrydio"
+        }
+      },
+      "update_tmdb": {
+        "title": "Diweddaru Allwedd TMDB / Gwlad / Iaith",
+        "description": "Mae'r rhestr wledydd yn cael ei nôl yn fyw o TMDB.",
+        "data": {
+          "tmdb_api_key": "Allwedd API TMDB",
+          "country": "Gwlad",
+          "language": "Iaith (dewisol)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Allwedd API TMDB annilys neu wasanaeth yn anhygyrch.",
+      "no_results": "Heb ganfod canlyniadau."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Statws",
+        "state": {
+          "Running": "Yn rhedeg",
+          "Ended": "Wedi dod i ben",
+          "To Be Determined": "I'w benderfynu",
+          "In Development": "Mewn datblygiad",
+          "Canceled/Ended": "Wedi'i ganslo",
+          "In Limbo": "Mewn ansicrwydd",
+          "Unknown": "Anhysbys"
+        }
+      }
+    }
+  }
+}
