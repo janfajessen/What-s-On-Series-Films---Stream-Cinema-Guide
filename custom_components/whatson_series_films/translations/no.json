@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-nøkkel",
+        "description": "Skriv inn din gratis TMDB API-nøkkel for å aktivere strømme- og kinofunksjoner. La den stå tom for å bare bruke TVmaze (ingen nøkkel nødvendig).\n\nFå en gratis nøkkel på [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Utvikler → Personlig bruk.",
+        "data": {
+          "tmdb_api_key": "TMDB API-nøkkel (valgfri)"
+        }
+      },
+      "country": {
+        "title": "Land og språk",
+        "description": "Velg landet ditt fra listen over land som støttes av TMDB. Språket for titler og beskrivelser oppdages automatisk — overstyr bare om nødvendig.",
+        "data": {
+          "country": "Land",
+          "language": "Språk (valgfritt — automatisk fra land)"
+        }
+      },
+      "platforms": {
+        "title": "Strømmeplattformer",
+        "description": "Dette er plattformene som er tilgjengelige i ditt land i henhold til TMDB. Velg de du abonnerer på.",
+        "data": {
+          "platforms": "Strømmeplattformer"
+        }
+      },
+      "tvmaze": {
+        "title": "Spor en serie eller dokumentar",
+        "description": "Skriv et navn for å søke på TVmaze. La det stå tomt for å fullføre uten å legge til noen serie.",
+        "data": {
+          "show_name": "Serie / dokumentarnavn"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Velg serie / dokumentar",
+        "description": "Velg riktig resultat fra listen.",
+        "data": {
+          "show_id": "Serie / dokumentar"
+        }
+      },
+      "add_another": {
+        "title": "Legge til en ny serie eller dokumentar?",
+        "description": "Lagt til så langt: **{shows_added}**",
+        "data": {
+          "add_another": "Legg til en ny serie eller dokumentar"
+        }
+      },
+      "reconfigure": {
+        "title": "Rekonfigurer What's On Series & Films",
+        "description": "Oppdater din TMDB API-nøkkel. Valg av land og plattform vil følge på de neste skjermene.",
+        "data": {
+          "tmdb_api_key": "TMDB API-nøkkel"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ugyldig TMDB API-nøkkel eller tjenesten utilgjengelig.",
+      "no_results": "Ingen resultater funnet. Prøv en annen stavemåte.",
+      "cannot_connect": "Kan ikke koble til. Sjekk internettforbindelsen din."
+    },
+    "abort": {
+      "already_configured": "Dette landet er allerede konfigurert. Bruk alternativer (⚙) for å administrere det, eller legg til en ny oppføring for et annet land.",
+      "reconfigure_successful": "Rekonfigurering vellykket."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Alternativer",
+        "description": "Hva vil du gjøre?",
+        "data": {
+          "action": "Handling"
+        }
+      },
+      "tvmaze": {
+        "title": "Legg til en serie eller dokumentar",
+        "description": "Søk på TVmaze etter serien eller dokumentaren du vil spore.",
+        "data": {
+          "show_name": "Serie / dokumentarnavn"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Velg serie / dokumentar",
+        "data": {
+          "show_id": "Serie / dokumentar"
+        }
+      },
+      "remove_show": {
+        "title": "Fjern en serie eller dokumentar",
+        "description": "Velg den du vil slutte å spore.",
+        "data": {
+          "show_id": "Serie / dokumentar"
+        }
+      },
+      "update_platforms": {
+        "title": "Endre strømmeplattformer",
+        "description": "Listen hentes direkte fra TMDB for ditt land.",
+        "data": {
+          "platforms": "Strømmeplattformer"
+        }
+      },
+      "update_tmdb": {
+        "title": "Oppdater TMDB-nøkkel / land / språk",
+        "description": "Landlisten hentes direkte fra TMDB.",
+        "data": {
+          "tmdb_api_key": "TMDB API-nøkkel",
+          "country": "Land",
+          "language": "Språk (valgfritt)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Ugyldig TMDB API-nøkkel eller tjenesten utilgjengelig.",
+      "no_results": "Ingen resultater funnet."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Pågående",
+          "Ended": "Avsluttet",
+          "To Be Determined": "Skal fastsettes",
+          "In Development": "Under utvikling",
+          "Canceled/Ended": "Kansellert",
+          "In Limbo": "I limbo",
+          "Unknown": "Ukjent"
+        }
+      }
+    }
+  }
+}
