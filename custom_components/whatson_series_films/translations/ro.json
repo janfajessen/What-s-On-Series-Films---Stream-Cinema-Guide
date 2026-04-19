@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cheie API TMDB",
+        "description": "Introduceți cheia dvs. gratuită API TMDB pentru a activa funcțiile de streaming și cinema. Lăsați gol pentru a folosi doar TVmaze (nu este necesară nicio cheie).\n\nObțineți o cheie gratuită la [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Dezvoltator → Utilizare personală.",
+        "data": {
+          "tmdb_api_key": "Cheie API TMDB (opțională)"
+        }
+      },
+      "country": {
+        "title": "Țara și limba",
+        "description": "Selectați țara dvs. din lista de țări acceptate de TMDB. Limba pentru titluri și descrieri este detectată automat — suprascrieți doar dacă este necesar.",
+        "data": {
+          "country": "Țara",
+          "language": "Limba (opțională — detectată automat din țară)"
+        }
+      },
+      "platforms": {
+        "title": "Platforme de streaming",
+        "description": "Acestea sunt platformele disponibile în țara dvs. conform TMDB. Selectați cele la care sunteți abonat.",
+        "data": {
+          "platforms": "Platforme de streaming"
+        }
+      },
+      "tvmaze": {
+        "title": "Urmăriți un serial sau un documentar",
+        "description": "Introduceți un nume pentru a căuta în TVmaze. Lăsați gol pentru a finaliza fără a adăuga niciun serial.",
+        "data": {
+          "show_name": "Numele serialului / documentarului"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selectați serialul / documentarul",
+        "description": "Alegeți rezultatul corect din listă.",
+        "data": {
+          "show_id": "Serial / documentar"
+        }
+      },
+      "add_another": {
+        "title": "Adăugați un alt serial sau documentar?",
+        "description": "Adăugate până acum: **{shows_added}**",
+        "data": {
+          "add_another": "Adăugați un alt serial sau documentar"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigurați What's On Series & Films",
+        "description": "Actualizați cheia dvs. API TMDB. Selecția țării și a platformei va urma pe ecranele următoare.",
+        "data": {
+          "tmdb_api_key": "Cheie API TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Cheie API TMDB invalidă sau serviciu indisponibil.",
+      "no_results": "Nu s-au găsit rezultate. Încercați o altă ortografie.",
+      "cannot_connect": "Nu se poate conecta. Verificați conexiunea la internet."
+    },
+    "abort": {
+      "already_configured": "Această țară este deja configurată. Utilizați opțiunile (⚙) pentru a o gestiona sau adăugați o nouă intrare pentru o altă țară.",
+      "reconfigure_successful": "Reconfigurare reușită."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Opțiuni",
+        "description": "Ce doriți să faceți?",
+        "data": {
+          "action": "Acțiune"
+        }
+      },
+      "tvmaze": {
+        "title": "Adăugați un serial sau documentar",
+        "description": "Căutați pe TVmaze serialul sau documentarul pe care doriți să-l urmăriți.",
+        "data": {
+          "show_name": "Numele serialului / documentarului"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Selectați serialul / documentarul",
+        "data": {
+          "show_id": "Serial / documentar"
+        }
+      },
+      "remove_show": {
+        "title": "Eliminați un serial sau documentar",
+        "description": "Selectați cel pe care doriți să nu-l mai urmăriți.",
+        "data": {
+          "show_id": "Serial / documentar"
+        }
+      },
+      "update_platforms": {
+        "title": "Schimbați platformele de streaming",
+        "description": "Lista este preluată live de la TMDB pentru țara dvs.",
+        "data": {
+          "platforms": "Platforme de streaming"
+        }
+      },
+      "update_tmdb": {
+        "title": "Actualizați cheia TMDB / țara / limba",
+        "description": "Lista de țări este preluată live de la TMDB.",
+        "data": {
+          "tmdb_api_key": "Cheie API TMDB",
+          "country": "Țara",
+          "language": "Limba (opțională)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Cheie API TMDB invalidă sau serviciu indisponibil.",
+      "no_results": "Nu s-au găsit rezultate."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Stare",
+        "state": {
+          "Running": "În desfășurare",
+          "Ended": "Încheiat",
+          "To Be Determined": "De determinat",
+          "In Development": "În dezvoltare",
+          "Canceled/Ended": "Anulat",
+          "In Limbo": "În incertitudine",
+          "Unknown": "Necunoscut"
+        }
+      }
+    }
+  }
+}
