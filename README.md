@@ -540,55 +540,178 @@ template:
 
 ## 🗺️ Available countries
 
-The What's On TV integration supports the following countries for cinema and streaming platforms. Use the 2-letter country code in your integration configuration.
 
 ### 🎬 Cinema (TMDB Now Playing / Upcoming)
 
-|<sub>Flag</sub> |<sub>Country</sub> |<sub>Code</sub> |
-|------|---------|------|
-|<sub>🇦🇩</sub> | <sub>Andorra</sub> |<sub>`AD`</sub> |
-|<sub>🇦🇷</sub> | <sub>Argentina</sub>|<sub>`AR`</sub> |
-|<sub>🇦🇺</sub> |<sub>Australia |<sub>`AU`</sub> |
-|<sub>🇦🇹</sub> |<sub>Austria</sub> |<sub>`AT`</sub> |
-|<sub>🇧🇪</sub> |<sub>Belgium</sub> |<sub>`BE`</sub> |
-|<sub>🇧🇷</sub> |<sub>Brazil</sub> |<sub>`BR`</sub> |
-|<sub>🇨🇦</sub> |<sub>Canada</sub> |<sub>`CA`</sub> |
-|<sub>🇨🇱</sub> |<sub>Chile</sub> |<sub>`CL`</sub> |
-|<sub>🇨🇴</sub> |<sub>Colombia</sub> |<sub>`CO`</sub> |
-|<sub>🇨🇿</sub> |<sub>Czech Republic</sub> |<sub>`CZ`</sub> |
-|<sub>🇩🇰</sub> |<sub>Denmark</sub> |<sub>`DK`</sub> |
-|<sub>🇫🇮</sub> |<sub>Finland</sub> |<sub>`FI`</sub> |
-|<sub>🇫🇷</sub> |<sub>France</sub> |<sub>`FR`</sub> |
-|<sub>🇩🇪</sub> |<sub>Germany</sub> |<sub>`DE`</sub> |
-|<sub>🇬🇷</sub> |<sub>Greece</sub> |<sub>`GR`</sub> |
-|<sub>🇭🇰</sub> |<sub>Hong Kong</sub> |<sub>`HK`</sub> |
-|<sub>🇭🇺</sub> |<sub>Hungary</sub> |<sub>`HU`</sub> |
-|<sub>🇮🇳</sub> |<sub>India</sub> |<sub>`IN`</sub> |
-|<sub>🇮🇩</sub> |<sub>Indonesia</sub> |<sub>`ID`</sub> |
-|<sub>🇮🇪</sub> |<sub>Ireland</sub> |<sub>`IE`</sub> |
-|<sub>🇮🇱</sub> |<sub>Israel</sub> |<sub>`IL`</sub> |
-|<sub>🇮🇹</sub> |<sub>Italy</sub> |<sub>`IT`</sub> |
-|<sub>🇯🇵</sub> |<sub>Japan</sub> |<sub>`JP`</sub> |
-|<sub>🇲🇽</sub> |<sub>Mexico</sub> |<sub>`MX`</sub> |
-|<sub>🇳🇱</sub> |<sub>Netherlands</sub> |<sub>`NL`</sub> |
-|<sub>🇳🇿</sub> |<sub>New Zealand</sub> |<sub>`NZ`</sub> |
-|<sub>🇳🇴</sub> |<sub>Norway</sub> |<sub>`NO`</sub> |
-|<sub>🇵🇱</sub> |<sub>Poland</sub> |<sub>`PL`</sub> |
-|<sub>🇵🇹</sub> |<sub>Portugal</sub> |<sub>`PT`</sub> |
-|<sub>🇷🇴</sub> |<sub>Romania</sub> |<sub>`RO`</sub> |
-|<sub>🇷🇺</sub> |<sub>Russia</sub> |<sub>`RU`</sub> |
-|<sub>🇸🇦</sub> |<sub>Saudi Arabia</sub> |<sub>`SA`</sub> |
-|<sub>🇸🇬</sub> |<sub>Singapore</sub> |<sub>`SG`</sub> |
-|<sub>🇰🇷</sub> |<sub>South Korea</sub> |<sub>`KR`</sub> |
-|<sub>🇪🇸</sub> |<sub>Spain</sub> |<sub>`ES`</sub> |
-|<sub>🇸🇪</sub> |<sub>Sweden</sub> |<sub>`SE`</sub> |
-|<sub>🇨🇭</sub> |<sub>Switzerland</sub> |<sub>`CH`</sub> |
-|<sub>🇹🇼</sub> |<sub>Taiwan</sub> |<sub>`TW`</sub> |
-|<sub>🇹🇭</sub> |<sub>Thailand</sub> |<sub>`TH`</sub> |
-|<sub>🇹🇷</sub> |<sub>Turkey</sub> |<sub>`TR`</sub> |
-|<sub>🇬🇧</sub> |<sub>United Kingdom</sub> |<sub>`GB`</sub> |
-|<sub>🇺🇸</sub> |<sub>United States</sub> |<sub>`US`</sub> |
-|<sub>🇻🇪</sub> |<sub>Venezuela</sub> |<sub>`VE`</sub> |
+
+
+<table border="0" cellspacing="0" cellpadding="6" width="100%">
+<tr>
+<td width="20%" align="left"><sub>🇪🇸 España / Espanya / Espainia</sub></td>
+<td width="20%" align="left"><sub>🇦🇩 Andorra</sub></td>
+<td width="20%" align="left"><sub>🇦🇱 Shqipëria *</sub></td>
+<td width="20%" align="left"><sub>🇦🇷 Argentina</sub></td>
+<td width="20%" align="left"><sub>🇦🇲 Հայաստան *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇦🇺 Australia</sub></td>
+<td width="20%" align="left"><sub>🇦🇹 Österreich</sub></td>
+<td width="20%" align="left"><sub>🇦🇼 Aruba *</sub></td>
+<td width="20%" align="left"><sub>🇸🇦 المملكة العربية السعودية</sub></td>
+<td width="20%" align="left"><sub>🇧🇾 Беларусь *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇧🇪 België / Belgique / Belgien</sub></td>
+<td width="20%" align="left"><sub>🇧🇴 Bolivia *</sub></td>
+<td width="20%" align="left"><sub>🇧🇦 Bosna i Hercegovina / Босна и Херцеговина *</sub></td>
+<td width="20%" align="left"><sub>🇧🇷 Brasil</sub></td>
+<td width="20%" align="left"><sub>🇧🇬 България *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇨🇦 Canada</sub></td>
+<td width="20%" align="left"><sub>🏝️ Caribbean *</sub></td>
+<td width="20%" align="left"><sub>🇨🇱 Chile</sub></td>
+<td width="20%" align="left"><sub>🇨🇳 中国 *</sub></td>
+<td width="20%" align="left"><sub>🇨🇴 Colombia</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇨🇷 Costa Rica *</sub></td>
+<td width="20%" align="left"><sub>🇨🇮 Côte d'Ivoire *</sub></td>
+<td width="20%" align="left"><sub>🇭🇷 Hrvatska *</sub></td>
+<td width="20%" align="left"><sub>🇨🇿 Česká republika</sub></td>
+<td width="20%" align="left"><sub>🇨🇾 Κύπρος / Kıbrıs *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇩🇰 Danmark</sub></td>
+<td width="20%" align="left"><sub>🇩🇴 Rep. Dominicana *</sub></td>
+<td width="20%" align="left"><sub>🇪🇨 Ecuador *</sub></td>
+<td width="20%" align="left"><sub>🇪🇬 مصر *</sub></td>
+<td width="20%" align="left"><sub>🇸🇻 El Salvador *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇪🇪 Eesti *</sub></td>
+<td width="20%" align="left"><sub>🇫🇴 Færøerne / Føroyar *</sub></td>
+<td width="20%" align="left"><sub>🇫🇮 Suomi / Finland</sub></td>
+<td width="20%" align="left"><sub>🇫🇷 France</sub></td>
+<td width="20%" align="left"><sub>🇬🇪 საქართველო *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇩🇪 Deutschland</sub></td>
+<td width="20%" align="left"><sub>🇬🇭 Ghana *</sub></td>
+<td width="20%" align="left"><sub>🇬🇷 Ελλάδα</sub></td>
+<td width="20%" align="left"><sub>🇬🇹 Guatemala *</sub></td>
+<td width="20%" align="left"><sub>🇭🇳 Honduras *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇭🇰 Hong Kong / 香港</sub></td>
+<td width="20%" align="left"><sub>🇭🇺 Magyarország</sub></td>
+<td width="20%" align="left"><sub>🇮🇪 Ireland / Éire</sub></td>
+<td width="20%" align="left"><sub>🇮🇸 Ísland *</sub></td>
+<td width="20%" align="left"><sub>🇮🇳 Bharat भारत</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇮🇩 Indonesia</sub></td>
+<td width="20%" align="left"><sub>🇮🇱 יִשְׂרָאֵל</sub></td>
+<td width="20%" align="left"><sub>🇮🇹 Italia</sub></td>
+<td width="20%" align="left"><sub>🇯🇲 Jamaica *</sub></td>
+<td width="20%" align="left"><sub>🇯🇵 日本</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇰🇿 Қазақстан *</sub></td>
+<td width="20%" align="left"><sub>🇰🇪 Kenya *</sub></td>
+<td width="20%" align="left"><sub>🇱🇻 Latvija *</sub></td>
+<td width="20%" align="left"><sub>🇱🇧 لبنان *</sub></td>
+<td width="20%" align="left"><sub>🇱🇮 Liechtenstein *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇱🇾 Libya / ليبيا *</sub></td>
+<td width="20%" align="left"><sub>🇱🇹 Lietuva *</sub></td>
+<td width="20%" align="left"><sub>🇱🇺 Lëtzebuerg / Luxembourg / Luxemburg *</sub></td>
+<td width="20%" align="left"><sub>🇲🇴 Macao / 澳門 *</sub></td>
+<td width="20%" align="left"><sub>🇲🇬 Madagasikara *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇲🇼 Malawi *</sub></td>
+<td width="20%" align="left"><sub>🇲🇾 Bahasa Melayu *</sub></td>
+<td width="20%" align="left"><sub>🇲🇹 Malta *</sub></td>
+<td width="20%" align="left"><sub>🇲🇺 Mauritius *</sub></td>
+<td width="20%" align="left"><sub>🇲🇽 México</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇲🇰 Северна Македонија *</sub></td>
+<td width="20%" align="left"><sub>🇲🇳 Монгол *</sub></td>
+<td width="20%" align="left"><sub>🇲🇪 Crna Gora / Črna Гора *</sub></td>
+<td width="20%" align="left"><sub>🇲🇦 المغرب *</sub></td>
+<td width="20%" align="left"><sub>🇲🇨 Monaco / Mónegue *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇲🇿 Moçambique *</sub></td>
+<td width="20%" align="left"><sub>🇳🇦 Namibia *</sub></td>
+<td width="20%" align="left"><sub>🇳🇱 Nederland</sub></td>
+<td width="20%" align="left"><sub>🇳🇨 Nouvelle-Calédonie *</sub></td>
+<td width="20%" align="left"><sub>🇳🇿 New Zealand / Aotearoa</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇳🇮 Nicaragua *</sub></td>
+<td width="20%" align="left"><sub>🇳🇬 Nigeria *</sub></td>
+<td width="20%" align="left"><sub>🇳🇴 Norge / Noreg</sub></td>
+<td width="20%" align="left"><sub>🇵🇰 Pakistan *</sub></td>
+<td width="20%" align="left"><sub>🇵🇦 Panamá *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇵🇾 Paraguay *</sub></td>
+<td width="20%" align="left"><sub>🇵🇪 Perú *</sub></td>
+<td width="20%" align="left"><sub>🇵🇭 Pilipinas *</sub></td>
+<td width="20%" align="left"><sub>🇵🇱 Polska</sub></td>
+<td width="20%" align="left"><sub>🇵🇸 فلسطين *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇵🇹 Portugal</sub></td>
+<td width="20%" align="left"><sub>🇵🇷 Puerto Rico *</sub></td>
+<td width="20%" align="left"><sub>🇶🇦 قطر *</sub></td>
+<td width="20%" align="left"><sub>🇷🇴 România</sub></td>
+<td width="20%" align="left"><sub>🇷🇺 Россия</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇷🇸 Gora / Црна Гора *</sub></td>
+<td width="20%" align="left"><sub>🇸🇲 San Marino *</sub></td>
+<td width="20%" align="left"><sub>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland *</sub></td>
+<td width="20%" align="left"><sub>🇸🇬 Singapore / 新加坡 / சிங்கப்பூர் / Singapura</sub></td>
+<td width="20%" align="left"><sub>🇸🇰 Slovensko *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇸🇮 Slovenija *</sub></td>
+<td width="20%" align="left"><sub>🇿🇦 South Africa *</sub></td>
+<td width="20%" align="left"><sub>🇰🇷 대한민국</sub></td>
+<td width="20%" align="left"><sub>🇸🇪 Sverige</sub></td>
+<td width="20%" align="left"><sub>🇨🇭 Schweiz / Suisse / Svizzera / Svizra</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇹🇼 Taiwan / 臺灣</sub></td>
+<td width="20%" align="left"><sub>🇹🇭 ประเทศไทย</sub></td>
+<td width="20%" align="left"><sub>🇹🇷 Türkiye</sub></td>
+<td width="20%" align="left"><sub>🇺🇬 Uganda *</sub></td>
+<td width="20%" align="left"><sub>🇺🇦 Украïна *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇦🇪 Al-Imarat *</sub></td>
+<td width="20%" align="left"><sub>🇬🇧 United Kingdom / Cymru / Alba</sub></td>
+<td width="20%" align="left"><sub>🇺🇸 United States</sub></td>
+<td width="20%" align="left"><sub>🇺🇾 Uruguay *</sub></td>
+<td width="20%" align="left"><sub>🇺🇿 Oʻzbekiston *</sub></td>
+</tr>
+<tr>
+<td width="20%" align="left"><sub>🇻🇦 Città del Vaticano *</sub></td>
+<td width="20%" align="left"><sub>🇻🇪 Venezuela</sub></td>
+<td width="20%" align="left"><sub>🇻🇳 Việt Nam *</sub></td>
+<td width="20%" align="left"><sub>🇿🇲 Zambia *</sub></td>
+<td width="20%" align="left"><sub>🇿🇼 Zimbabwe *</sub></td>
+</tr>
+</table>...
+* 🌍 Only worldwide platforms
+
+
+
 
 ### 📡 Streaming platforms availability
 
