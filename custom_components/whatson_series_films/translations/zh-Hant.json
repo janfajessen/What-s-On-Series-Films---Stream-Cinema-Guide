@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API金鑰",
+        "description": "輸入您的免費TMDB API金鑰以啟用串流和影院功能。留空則僅使用TVmaze（無需金鑰）。\n\n在[themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → 開發者 → 個人使用獲取免費金鑰。",
+        "data": {
+          "tmdb_api_key": "TMDB API金鑰（可選）"
+        }
+      },
+      "country": {
+        "title": "國家與語言",
+        "description": "從TMDB支援的國家清單中選擇您的國家。標題和描述的語言會自動偵測 — 僅在需要時覆蓋。",
+        "data": {
+          "country": "國家",
+          "language": "語言（可選 — 從國家自動偵測）"
+        }
+      },
+      "platforms": {
+        "title": "串流平台",
+        "description": "這些是根據TMDB在您所在國家可用的平台。選擇您訂閱的平台。",
+        "data": {
+          "platforms": "串流平台"
+        }
+      },
+      "tvmaze": {
+        "title": "追蹤影集或紀錄片",
+        "description": "輸入名稱以搜尋TVmaze。留空以結束而不新增任何影集。",
+        "data": {
+          "show_name": "影集/紀錄片名稱"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "選擇影集/紀錄片",
+        "description": "從清單中選擇正確的結果。",
+        "data": {
+          "show_id": "影集/紀錄片"
+        }
+      },
+      "add_another": {
+        "title": "新增另一個影集或紀錄片？",
+        "description": "目前已新增：**{shows_added}**",
+        "data": {
+          "add_another": "新增另一個影集或紀錄片"
+        }
+      },
+      "reconfigure": {
+        "title": "重新設定What's On Series & Films",
+        "description": "更新您的TMDB API金鑰。國家和平台選擇將在後續畫面上進行。",
+        "data": {
+          "tmdb_api_key": "TMDB API金鑰"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "無效的TMDB API金鑰或服務無法連線。",
+      "no_results": "未找到結果。請嘗試不同的拼寫。",
+      "cannot_connect": "無法連線。請檢查您的網際網路連線。"
+    },
+    "abort": {
+      "already_configured": "此國家已設定。使用選項（⚙）進行管理，或為不同國家新增條目。",
+      "reconfigure_successful": "重新設定成功。"
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — 選項",
+        "description": "您想做什麼？",
+        "data": {
+          "action": "操作"
+        }
+      },
+      "tvmaze": {
+        "title": "新增影集或紀錄片",
+        "description": "搜尋TVmaze查詢您想追蹤的影集或紀錄片。",
+        "data": {
+          "show_name": "影集/紀錄片名稱"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "選擇影集/紀錄片",
+        "data": {
+          "show_id": "影集/紀錄片"
+        }
+      },
+      "remove_show": {
+        "title": "移除影集或紀錄片",
+        "description": "選擇您想停止追蹤的影集。",
+        "data": {
+          "show_id": "影集/紀錄片"
+        }
+      },
+      "update_platforms": {
+        "title": "更改串流平台",
+        "description": "清單會根據您的國家從TMDB即時取得。",
+        "data": {
+          "platforms": "串流平台"
+        }
+      },
+      "update_tmdb": {
+        "title": "更新TMDB金鑰/國家/語言",
+        "description": "國家清單會從TMDB即時取得。",
+        "data": {
+          "tmdb_api_key": "TMDB API金鑰",
+          "country": "國家",
+          "language": "語言（可選）"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "無效的TMDB API金鑰或服務無法連線。",
+      "no_results": "未找到結果。"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "狀態",
+        "state": {
+          "Running": "播出中",
+          "Ended": "已完結",
+          "To Be Determined": "待定",
+          "In Development": "開發中",
+          "Canceled/Ended": "已取消",
+          "In Limbo": "懸而未決",
+          "Unknown": "未知"
+        }
+      }
+    }
+  }
+}
