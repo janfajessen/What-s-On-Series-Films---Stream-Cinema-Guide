@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "مفتاح TMDB API",
+        "description": "أدخل مفتاح TMDB API المجاني الخاص بك لتمكين ميزات البث والسينما. اتركه فارغًا لاستخدام TVmaze فقط (لا حاجة لمفتاح).\n\nاحصل على مفتاح مجاني من [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → مطور → استخدام شخصي.",
+        "data": {
+          "tmdb_api_key": "مفتاح TMDB API (اختياري)"
+        }
+      },
+      "country": {
+        "title": "الدولة واللغة",
+        "description": "اختر دولتک من قائمة الدول التي يدعمها TMDB. يتم اكتشاف اللغة للعناوين والوصف تلقائيًا — تجاوز فقط إذا لزم الأمر.",
+        "data": {
+          "country": "الدولة",
+          "language": "اللغة (اختياري — يتم اكتشافها تلقائيًا من الدولة)"
+        }
+      },
+      "platforms": {
+        "title": "منصات البث",
+        "description": "هذه هي المنصات المتاحة في دولتک وفقًا لـ TMDB. اختر المنصات التي اشتركت فيها.",
+        "data": {
+          "platforms": "منصات البث"
+        }
+      },
+      "tvmaze": {
+        "title": "تتبع مسلسل أو وثائقي",
+        "description": "اكتب اسمًا للبحث في TVmaze. اتركه فارغًا للانتهاء دون إضافة أي مسلسل.",
+        "data": {
+          "show_name": "اسم المسلسل / الوثائقي"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "اختر المسلسل / الوثائقي",
+        "description": "اختر النتيجة الصحيحة من القائمة.",
+        "data": {
+          "show_id": "المسلسل / الوثائقي"
+        }
+      },
+      "add_another": {
+        "title": "هل تريد إضافة مسلسل أو وثائقي آخر؟",
+        "description": "تمت الإضافة حتى الآن: **{shows_added}**",
+        "data": {
+          "add_another": "إضافة مسلسل أو وثائقي آخر"
+        }
+      },
+      "reconfigure": {
+        "title": "إعادة تكوين What's On Series & Films",
+        "description": "حدّث مفتاح TMDB API الخاص بك. سيتبع اختيار الدولة والمنصة على الشاشات التالية.",
+        "data": {
+          "tmdb_api_key": "مفتاح TMDB API"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "مفتاح TMDB API غير صالح أو الخدمة غير قابلة للوصول.",
+      "no_results": "لم يتم العثور على نتائج. جرب تهجئة مختلفة.",
+      "cannot_connect": "لا يمكن الاتصال. تحقق من اتصالك بالإنترنت."
+    },
+    "abort": {
+      "already_configured": "هذه الدولة تم تكوينها بالفعل. استخدم الخيارات (⚙) لإدارتها، أو أضف إدخالًا جديدًا لدولة مختلفة.",
+      "reconfigure_successful": "إعادة التكوين ناجحة."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — الخيارات",
+        "description": "ماذا تريد أن تفعل؟",
+        "data": {
+          "action": "الإجراء"
+        }
+      },
+      "tvmaze": {
+        "title": "إضافة مسلسل أو وثائقي",
+        "description": "ابحث في TVmaze عن المسلسل أو الوثائقي الذي تريد تتبعه.",
+        "data": {
+          "show_name": "اسم المسلسل / الوثائقي"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "اختر المسلسل / الوثائقي",
+        "data": {
+          "show_id": "المسلسل / الوثائقي"
+        }
+      },
+      "remove_show": {
+        "title": "إزالة مسلسل أو وثائقي",
+        "description": "اختر الذي تريد التوقف عن تتبعه.",
+        "data": {
+          "show_id": "المسلسل / الوثائقي"
+        }
+      },
+      "update_platforms": {
+        "title": "تغيير منصات البث",
+        "description": "يتم جلب القائمة مباشرة من TMDB لدولتك.",
+        "data": {
+          "platforms": "منصات البث"
+        }
+      },
+      "update_tmdb": {
+        "title": "تحديث مفتاح TMDB / الدولة / اللغة",
+        "description": "يتم جلب قائمة الدول مباشرة من TMDB.",
+        "data": {
+          "tmdb_api_key": "مفتاح TMDB API",
+          "country": "الدولة",
+          "language": "اللغة (اختياري)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "مفتاح TMDB API غير صالح أو الخدمة غير قابلة للوصول.",
+      "no_results": "لم يتم العثور على نتائج."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "الحالة",
+        "state": {
+          "Running": "قيد التشغيل",
+          "Ended": "منتهٍ",
+          "To Be Determined": "سيتم تحديده لاحقًا",
+          "In Development": "قيد التطوير",
+          "Canceled/Ended": "ملغي",
+          "In Limbo": "في حالة تعليق",
+          "Unknown": "غير معروف"
+        }
+      }
+    }
+  }
+}
