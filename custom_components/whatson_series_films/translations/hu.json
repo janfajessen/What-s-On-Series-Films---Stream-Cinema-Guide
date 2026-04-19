@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API-kulcs",
+        "description": "Adja meg ingyenes TMDB API-kulcsát a streaming és mozi funkciók engedélyezéséhez. Hagyja üresen, ha csak a TVmaze-t szeretné használni (nem szükséges kulcs).\n\nIngyenes kulcsot a [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Fejlesztő → Személyes használat oldalon szerezhet.",
+        "data": {
+          "tmdb_api_key": "TMDB API-kulcs (opcionális)"
+        }
+      },
+      "country": {
+        "title": "Ország és nyelv",
+        "description": "Válassza ki országát a TMDB által támogatott országok listájából. A címek és leírások nyelve automatikusan felismerhető — csak szükség esetén írja felül.",
+        "data": {
+          "country": "Ország",
+          "language": "Nyelv (opcionális — automatikusan az országból)"
+        }
+      },
+      "platforms": {
+        "title": "Streaming platformok",
+        "description": "Ezek a TMDB szerint az Ön országában elérhető platformok. Válassza ki azokat, amelyekre előfizet.",
+        "data": {
+          "platforms": "Streaming platformok"
+        }
+      },
+      "tvmaze": {
+        "title": "Sorozat vagy dokumentumfilm követése",
+        "description": "Írjon be egy nevet a TVmaze kereséséhez. A befejezéshez hagyja üresen, ha nem szeretne sorozatot hozzáadni.",
+        "data": {
+          "show_name": "Sorozat / dokumentumfilm neve"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Válassza ki a sorozatot / dokumentumfilmet",
+        "description": "Válassza ki a helyes eredményt a listából.",
+        "data": {
+          "show_id": "Sorozat / dokumentumfilm"
+        }
+      },
+      "add_another": {
+        "title": "Hozzáad egy másik sorozatot vagy dokumentumfilmet?",
+        "description": "Eddig hozzáadva: **{shows_added}**",
+        "data": {
+          "add_another": "Egy másik sorozat vagy dokumentumfilm hozzáadása"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films újrakonfigurálása",
+        "description": "Frissítse TMDB API-kulcsát. Az ország- és platformválasztás a következő képernyőkön folytatódik.",
+        "data": {
+          "tmdb_api_key": "TMDB API-kulcs"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Érvénytelen TMDB API-kulcs vagy a szolgáltatás nem érhető el.",
+      "no_results": "Nincs találat. Próbáljon másik írásmódot.",
+      "cannot_connect": "Nem lehet csatlakozni. Ellenőrizze internetkapcsolatát."
+    },
+    "abort": {
+      "already_configured": "Ez az ország már konfigurálva van. Használja a beállításokat (⚙) a kezeléséhez, vagy adjon hozzá új bejegyzést egy másik országhoz.",
+      "reconfigure_successful": "Az újrakonfigurálás sikeres."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Beállítások",
+        "description": "Mit szeretne tenni?",
+        "data": {
+          "action": "Művelet"
+        }
+      },
+      "tvmaze": {
+        "title": "Sorozat vagy dokumentumfilm hozzáadása",
+        "description": "Keressen a TVmaze-ben a követni kívánt sorozatra vagy dokumentumfilmre.",
+        "data": {
+          "show_name": "Sorozat / dokumentumfilm neve"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Válassza ki a sorozatot / dokumentumfilmet",
+        "data": {
+          "show_id": "Sorozat / dokumentumfilm"
+        }
+      },
+      "remove_show": {
+        "title": "Sorozat vagy dokumentumfilm eltávolítása",
+        "description": "Válassza ki, amelyik követését abba szeretné hagyni.",
+        "data": {
+          "show_id": "Sorozat / dokumentumfilm"
+        }
+      },
+      "update_platforms": {
+        "title": "Streaming platformok megváltoztatása",
+        "description": "A lista élőben kerül lekérésre a TMDB-től az Ön országa számára.",
+        "data": {
+          "platforms": "Streaming platformok"
+        }
+      },
+      "update_tmdb": {
+        "title": "TMDB-kulcs / ország / nyelv frissítése",
+        "description": "Az ország lista élőben kerül lekérésre a TMDB-től.",
+        "data": {
+          "tmdb_api_key": "TMDB API-kulcs",
+          "country": "Ország",
+          "language": "Nyelv (opcionális)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Érvénytelen TMDB API-kulcs vagy a szolgáltatás nem érhető el.",
+      "no_results": "Nincs találat."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Állapot",
+        "state": {
+          "Running": "Fut",
+          "Ended": "Befejeződött",
+          "To Be Determined": "Később meghatározandó",
+          "In Development": "Fejlesztés alatt",
+          "Canceled/Ended": "Törölve",
+          "In Limbo": "Bizonytalan",
+          "Unknown": "Ismeretlen"
+        }
+      }
+    }
+  }
+}
