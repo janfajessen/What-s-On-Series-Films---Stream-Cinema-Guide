@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "TMDB API gakoa",
+        "description": "Sartu zure TMDB API doako gakoa streaming eta zinema funtzioak gaitzeko. Utzi hutsik TVmaze bakarrik erabiltzeko (ez da gakorik behar).\n\nLortu doako gako bat [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Garatzailea → Erabilera pertsonala.",
+        "data": {
+          "tmdb_api_key": "TMDB API gakoa (aukerakoa)"
+        }
+      },
+      "country": {
+        "title": "Herrialdea eta hizkuntza",
+        "description": "Aukeratu zure herrialdea TMDBk onartzen dituen herrialdeen zerrendatik. Izenburuen eta deskribapenen hizkuntza automatikoki detektatzen da — gainidatzi behar izanez gero bakarrik.",
+        "data": {
+          "country": "Herrialdea",
+          "language": "Hizkuntza (aukerakoa — automatikoa herrialdetik)"
+        }
+      },
+      "platforms": {
+        "title": "Streaming plataformak",
+        "description": "Hauek dira TMDBren arabera zure herrialdean eskuragarri dauden plataformak. Hautatu harpidetuta zaituztenak.",
+        "data": {
+          "platforms": "Streaming plataformak"
+        }
+      },
+      "tvmaze": {
+        "title": "Jarraitu serie edo dokumental bat",
+        "description": "Idatzi izen bat TVmaze bilatzeko. Utzi hutsik serie gehitu gabe amaitzeko.",
+        "data": {
+          "show_name": "Seriearen / dokumentalaren izena"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Hautatu seriea / dokumentala",
+        "description": "Aukeratu emaitza zuzena zerrendatik.",
+        "data": {
+          "show_id": "Seriea / dokumentala"
+        }
+      },
+      "add_another": {
+        "title": "Serie edo dokumental gehiago gehitu?",
+        "description": "Orain arte gehituta: **{shows_added}**",
+        "data": {
+          "add_another": "Gehitu beste serie edo dokumental bat"
+        }
+      },
+      "reconfigure": {
+        "title": "What's On Series & Films birkonfiguratu",
+        "description": "Eguneratu zure TMDB API gakoa. Herrialdearen eta plataformaren hautaketa hurrengo pantailatan jarraituko du.",
+        "data": {
+          "tmdb_api_key": "TMDB API gakoa"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "TMDB API gakoa baliogabea edo zerbitzua eskuragarri ez.",
+      "no_results": "Ez da emaitzarik aurkitu. Saiatu ortografia desberdin batekin.",
+      "cannot_connect": "Ezin da konektatu. Egiaztatu zure interneteko konexioa."
+    },
+    "abort": {
+      "already_configured": "Herrialde hau jada konfiguratuta dago. Erabili aukerak (⚙) kudeatzeko, edo gehitu sarrera berri bat herrialde desberdin baterako.",
+      "reconfigure_successful": "Birkonfigurazioa arrakastatsua."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Aukerak",
+        "description": "Zer egin nahi duzu?",
+        "data": {
+          "action": "Ekintza"
+        }
+      },
+      "tvmaze": {
+        "title": "Gehitu serie edo dokumental bat",
+        "description": "Bilatu TVmaze-n jarraitu nahi duzun serie edo dokumentala.",
+        "data": {
+          "show_name": "Seriearen / dokumentalaren izena"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Hautatu seriea / dokumentala",
+        "data": {
+          "show_id": "Seriea / dokumentala"
+        }
+      },
+      "remove_show": {
+        "title": "Kendu serie edo dokumental bat",
+        "description": "Hautatu jarraitzeari utzi nahi diozuna.",
+        "data": {
+          "show_id": "Seriea / dokumentala"
+        }
+      },
+      "update_platforms": {
+        "title": "Aldatu streaming plataformak",
+        "description": "Zerrenda zuzenean jasotzen da TMDBtik zure herrialderako.",
+        "data": {
+          "platforms": "Streaming plataformak"
+        }
+      },
+      "update_tmdb": {
+        "title": "Eguneratu TMDB gakoa / herrialdea / hizkuntza",
+        "description": "Herrialdeen zerrenda zuzenean jasotzen da TMDBtik.",
+        "data": {
+          "tmdb_api_key": "TMDB API gakoa",
+          "country": "Herrialdea",
+          "language": "Hizkuntza (aukerakoa)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "TMDB API gakoa baliogabea edo zerbitzua eskuragarri ez.",
+      "no_results": "Ez da emaitzarik aurkitu."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Egoera",
+        "state": {
+          "Running": "Abian",
+          "Ended": "Amaituta",
+          "To Be Determined": "Zehatzeke",
+          "In Development": "Garapenean",
+          "Canceled/Ended": "Bertan behera",
+          "In Limbo": "Zalantzan",
+          "Unknown": "Ezezaguna"
+        }
+      }
+    }
+  }
+}
