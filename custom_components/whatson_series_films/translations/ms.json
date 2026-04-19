@@ -1,1 +1,132 @@
-
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Kunci API TMDB",
+        "description": "Masukkan kunci API TMDB percuma anda untuk mengaktifkan ciri penstriman dan wayang. Biarkan kosong untuk menggunakan hanya TVmaze (tiada kunci diperlukan).\n\nDapatkan kunci percuma di [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api) → Pembangun → Penggunaan peribadi.",
+        "data": {
+          "tmdb_api_key": "Kunci API TMDB (pilihan)"
+        }
+      },
+      "country": {
+        "title": "Negara & Bahasa",
+        "description": "Pilih negara anda daripada senarai negara yang disokong oleh TMDB. Bahasa untuk tajuk dan keterangan dikesan secara automatik — timpa hanya jika perlu.",
+        "data": {
+          "country": "Negara",
+          "language": "Bahasa (pilihan — dikesan automatik dari negara)"
+        }
+      },
+      "platforms": {
+        "title": "Platform Penstriman",
+        "description": "Ini adalah platform yang tersedia di negara anda menurut TMDB. Pilih platform yang anda langgan.",
+        "data": {
+          "platforms": "Platform Penstriman"
+        }
+      },
+      "tvmaze": {
+        "title": "Jejaki Siri atau Dok",
+        "description": "Taip nama untuk mencari TVmaze. Biarkan kosong untuk selesai tanpa menambah sebarang siri.",
+        "data": {
+          "show_name": "Nama Siri / Dok"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Pilih Siri / Dok",
+        "description": "Pilih hasil yang betul dari senarai.",
+        "data": {
+          "show_id": "Siri / Dok"
+        }
+      },
+      "add_another": {
+        "title": "Tambah Siri atau Dok Lain?",
+        "description": "Ditambah setakat ini: **{shows_added}**",
+        "data": {
+          "add_another": "Tambah siri atau dok lain"
+        }
+      },
+      "reconfigure": {
+        "title": "Konfigurasi Semula What's On Series & Films",
+        "description": "Kemaskini kunci API TMDB anda. Pemilihan negara dan platform akan menyusul pada skrin seterusnya.",
+        "data": {
+          "tmdb_api_key": "Kunci API TMDB"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Kunci API TMDB tidak sah atau perkhidmatan tidak dapat dicapai.",
+      "no_results": "Tiada hasil ditemui. Cuba ejaan yang berbeza.",
+      "cannot_connect": "Tidak dapat bersambung. Periksa sambungan internet anda."
+    },
+    "abort": {
+      "already_configured": "Negara ini sudah dikonfigurasi. Gunakan pilihan (⚙) untuk mengurusnya, atau tambah entri baru untuk negara yang berbeza.",
+      "reconfigure_successful": "Konfigurasi semula berjaya."
+    }
+  },
+  "options": {
+    "step": {
+      "menu": {
+        "title": "What's On Series & Films — Pilihan",
+        "description": "Apa yang anda mahu lakukan?",
+        "data": {
+          "action": "Tindakan"
+        }
+      },
+      "tvmaze": {
+        "title": "Tambah Siri atau Dok",
+        "description": "Cari TVmaze untuk siri atau dokumentari yang ingin anda jejaki.",
+        "data": {
+          "show_name": "Nama Siri / Dok"
+        }
+      },
+      "tvmaze_pick": {
+        "title": "Pilih Siri / Dok",
+        "data": {
+          "show_id": "Siri / Dok"
+        }
+      },
+      "remove_show": {
+        "title": "Buang Siri atau Dok",
+        "description": "Pilih yang anda mahu hentikan penjejakan.",
+        "data": {
+          "show_id": "Siri / Dok"
+        }
+      },
+      "update_platforms": {
+        "title": "Tukar Platform Penstriman",
+        "description": "Senarai diambil secara langsung dari TMDB untuk negara anda.",
+        "data": {
+          "platforms": "Platform Penstriman"
+        }
+      },
+      "update_tmdb": {
+        "title": "Kemaskini Kunci TMDB / Negara / Bahasa",
+        "description": "Senarai negara diambil secara langsung dari TMDB.",
+        "data": {
+          "tmdb_api_key": "Kunci API TMDB",
+          "country": "Negara",
+          "language": "Bahasa (pilihan)"
+        }
+      }
+    },
+    "error": {
+      "invalid_tmdb_key": "Kunci API TMDB tidak sah atau perkhidmatan tidak dapat dicapai.",
+      "no_results": "Tiada hasil ditemui."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "show_status": {
+        "name": "Status",
+        "state": {
+          "Running": "Berjalan",
+          "Ended": "Tamat",
+          "To Be Determined": "Akan Ditentukan",
+          "In Development": "Dalam Pembangunan",
+          "Canceled/Ended": "Dibatalkan",
+          "In Limbo": "Dalam Ketidakpastian",
+          "Unknown": "Tidak Diketahui"
+        }
+      }
+    }
+  }
+}
