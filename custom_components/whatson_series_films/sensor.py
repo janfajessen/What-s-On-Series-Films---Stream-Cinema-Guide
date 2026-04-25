@@ -56,6 +56,13 @@ async def async_setup_entry(
         CinemaUpcomingSensor(tmdb,   entry.entry_id, country),
     ])
 
+    # TMDB global weekly trending: 2 sensors with fixed unique_ids (global).
+    # HA deduplicates by unique_id automatically across multiple country entries.
+    entities.extend([
+        TrendingFilmsSensor(tmdb,  entry.entry_id),
+        TrendingSeriesSensor(tmdb, entry.entry_id),
+    ])
+
     async_add_entities(entities)
 
 
@@ -97,6 +104,7 @@ def _tmdb_cinema_device(entry_id: str, country: str) -> DeviceInfo:
 # ── TVmaze sensors ─────────────────────────────────────────────────────────────
 
 class _TVmazeBase(CoordinatorEntity[TVmazeCoordinator], SensorEntity):
+    _attr_has_entity_name = False  # entity name is already complete, don't prepend device name
     def __init__(self, coordinator: TVmazeCoordinator, entry_id: str,
                  show_id: int, show_name: str) -> None:
         super().__init__(coordinator)
@@ -124,7 +132,8 @@ class ShowNextEpisodeSensor(_TVmazeBase):
     def __init__(self, coordinator, entry_id, show_id, show_name):
         super().__init__(coordinator, entry_id, show_id, show_name)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_tvmaze_{show_id}_next_episode"
-        self._attr_name      = f"whatson_series_films {show_name} next episode"
+        self._attr_name      = f"{show_name} Next Episode"
+        self.entity_id       = f"sensor.whatson_series_films_{self._show_name.lower().replace(' ','_').replace('-','_')}_next_episode"
 
     @property
     def native_value(self) -> str:
@@ -160,7 +169,8 @@ class ShowPreviousEpisodeSensor(_TVmazeBase):
     def __init__(self, coordinator, entry_id, show_id, show_name):
         super().__init__(coordinator, entry_id, show_id, show_name)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_tvmaze_{show_id}_previous_episode"
-        self._attr_name      = f"whatson_series_films {show_name} previous episode"
+        self._attr_name      = f"{show_name} Previous Episode"
+        self.entity_id       = f"sensor.whatson_series_films_{self._show_name.lower().replace(' ','_').replace('-','_')}_previous_episode"
 
     @property
     def native_value(self) -> str:
@@ -187,7 +197,8 @@ class ShowStatusSensor(_TVmazeBase):
     def __init__(self, coordinator, entry_id, show_id, show_name):
         super().__init__(coordinator, entry_id, show_id, show_name)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_tvmaze_{show_id}_status"
-        self._attr_name      = f"whatson_series_films {show_name} status"
+        self._attr_name      = f"{show_name} Status"
+        self.entity_id       = f"sensor.whatson_series_films_{self._show_name.lower().replace(' ','_').replace('-','_')}_status"
 
     @property
     def native_value(self) -> str:
@@ -214,7 +225,8 @@ class ShowNetworkSensor(_TVmazeBase):
     def __init__(self, coordinator, entry_id, show_id, show_name):
         super().__init__(coordinator, entry_id, show_id, show_name)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_tvmaze_{show_id}_network"
-        self._attr_name      = f"whatson_series_films {show_name} network"
+        self._attr_name      = f"{show_name} Network"
+        self.entity_id       = f"sensor.whatson_series_films_{self._show_name.lower().replace(' ','_').replace('-','_')}_network"
 
     @property
     def native_value(self) -> str:
@@ -240,6 +252,7 @@ class ShowNetworkSensor(_TVmazeBase):
 # ── TMDB streaming sensors ─────────────────────────────────────────────────────
 
 class _TMDBStreamingBase(CoordinatorEntity[TMDBCoordinator], SensorEntity):
+    _attr_has_entity_name = False
     def __init__(self, coordinator: TMDBCoordinator, entry_id: str,
                  platform_name: str, country: str) -> None:
         super().__init__(coordinator)
@@ -269,7 +282,8 @@ class TMDBNewMoviesSensor(_TMDBStreamingBase):
     def __init__(self, coordinator, entry_id, platform_name, country):
         super().__init__(coordinator, entry_id, platform_name, country)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{self._country.lower()}_tmdb_{self._slug}_new_movies"
-        self._attr_name      = f"whatson_series_films {self._country} new movies on {platform_name}"
+        self._attr_name      = f"{self._country} New Movies on {platform_name}"
+        self.entity_id       = f"sensor.whatson_series_films_{self._country.lower()}_new_movies_on_{self._slug}"
 
     @property
     def native_value(self) -> int:
@@ -292,7 +306,8 @@ class TMDBNewShowsSensor(_TMDBStreamingBase):
     def __init__(self, coordinator, entry_id, platform_name, country):
         super().__init__(coordinator, entry_id, platform_name, country)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{self._country.lower()}_tmdb_{self._slug}_new_shows"
-        self._attr_name      = f"whatson_series_films {self._country} new series docs on {platform_name}"
+        self._attr_name      = f"{self._country} New Series & Docs on {platform_name}"
+        self.entity_id       = f"sensor.whatson_series_films_{self._country.lower()}_new_series_docs_on_{self._slug}"
 
     @property
     def native_value(self) -> int:
@@ -311,6 +326,7 @@ class TMDBNewShowsSensor(_TMDBStreamingBase):
 # ── TMDB cinema sensors ────────────────────────────────────────────────────────
 
 class _TMDBCinemaBase(CoordinatorEntity[TMDBCoordinator], SensorEntity):
+    _attr_has_entity_name = False
     def __init__(self, coordinator: TMDBCoordinator,
                  entry_id: str, country: str) -> None:
         super().__init__(coordinator)
@@ -338,7 +354,8 @@ class CinemaNowPlayingSensor(_TMDBCinemaBase):
     def __init__(self, coordinator, entry_id, country):
         super().__init__(coordinator, entry_id, country)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{self._country.lower()}_cinema_now_playing"
-        self._attr_name      = f"whatson_series_films {self._country} cinema now playing"
+        self._attr_name      = f"{self._country} Cinema Now Playing"
+        self.entity_id       = f"sensor.whatson_series_films_{self._country.lower()}_cinema_now_playing"
 
     @property
     def native_value(self) -> int:
@@ -363,7 +380,8 @@ class CinemaUpcomingSensor(_TMDBCinemaBase):
     def __init__(self, coordinator, entry_id, country):
         super().__init__(coordinator, entry_id, country)
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{self._country.lower()}_cinema_upcoming"
-        self._attr_name      = f"whatson_series_films {self._country} cinema upcoming"
+        self._attr_name      = f"{self._country} Cinema Upcoming"
+        self.entity_id       = f"sensor.whatson_series_films_{self._country.lower()}_cinema_upcoming"
 
     @property
     def native_value(self) -> int:
@@ -376,5 +394,93 @@ class CinemaUpcomingSensor(_TMDBCinemaBase):
         return {
             "movies":          movies,
             "region_fallback": fallback,
+        }
+
+
+# ── TMDB global trending sensors ───────────────────────────────────────────────
+
+def _tmdb_trending_device(entry_id: str) -> DeviceInfo:
+    return DeviceInfo(
+        identifiers={(DOMAIN, f"{entry_id}_tmdb_trending")},
+        name=f"{NAME} — Global Trending",
+        manufacturer="The Movie Database",
+        entry_type=DeviceEntryType.SERVICE,
+        configuration_url="https://www.themoviedb.org/trending",
+    )
+
+
+class _TMDBTrendingBase(CoordinatorEntity[TMDBCoordinator], SensorEntity):
+    _attr_has_entity_name = False
+    """Base for global weekly trending sensors."""
+
+    def __init__(self, coordinator: TMDBCoordinator, entry_id: str) -> None:
+        super().__init__(coordinator)
+        self._entry_id = entry_id
+
+    def _trending_data(self) -> dict:
+        return self.coordinator.data.get("__trending__", {})
+
+    @property
+    def device_info(self) -> DeviceInfo:
+        return _tmdb_trending_device(self._entry_id)
+
+    @property
+    def available(self) -> bool:
+        return self.coordinator.last_update_success
+
+
+class TrendingFilmsSensor(_TMDBTrendingBase):
+    """Top 20 trending films globally this week (TMDB /trending/movie/week).
+
+    Entity ID: sensor.whatson_series_films_global_trending_films_week
+    """
+
+    _attr_icon                       = "mdi:fire"
+    _attr_native_unit_of_measurement = "movies"
+
+    def __init__(self, coordinator, entry_id):
+        super().__init__(coordinator, entry_id)
+        self._attr_unique_id = f"{DOMAIN}_global_trending_films_week"
+        self._attr_name      = "Global Trending Films This Week"
+        self.entity_id       = "sensor.whatson_series_films_global_trending_films_week"
+
+    @property
+    def native_value(self) -> int:
+        return len(self._trending_data().get("films", []))
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        return {
+            "movies": self._trending_data().get("films", []),
+            "scope":  "global",
+            "window": "week",
+        }
+
+
+class TrendingSeriesSensor(_TMDBTrendingBase):
+    """Top 20 trending series/docs globally this week (TMDB /trending/tv/week).
+
+    Entity ID: sensor.whatson_series_films_global_trending_series_week
+    """
+
+    _attr_icon                       = "mdi:fire"
+    _attr_native_unit_of_measurement = "titles"
+
+    def __init__(self, coordinator, entry_id):
+        super().__init__(coordinator, entry_id)
+        self._attr_unique_id = f"{DOMAIN}_global_trending_series_week"
+        self._attr_name      = "Global Trending Series This Week"
+        self.entity_id       = "sensor.whatson_series_films_global_trending_series_week"
+
+    @property
+    def native_value(self) -> int:
+        return len(self._trending_data().get("series", []))
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        return {
+            "shows": self._trending_data().get("series", []),
+            "scope": "global",
+            "window": "week",
         }
         

@@ -430,13 +430,16 @@ class WhatsonSeriesFilmsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         return await self.async_step_country()
 
     def _finish_reconfigure(self) -> config_entries.FlowResult:
-        """Commit updated data back to the existing entry."""
+        """Commit updated data back to the existing entry and reload it."""
         existing = self._get_reconfigure_entry()
         data = dict(self._data)
         # Preserve existing shows — reconfigure only touches TMDB settings
         data[CONF_SHOWS] = existing.data.get(CONF_SHOWS, [])
-        self.hass.config_entries.async_update_entry(existing, data=data)
-        return self.async_abort(reason="reconfigure_successful")
+        return self.async_update_reload_and_abort(
+            existing,
+            data_updates=data,
+            reason="reconfigure_successful",
+        )
 
     @staticmethod
     @callback
@@ -469,7 +472,7 @@ class WhatsonSeriesFilmsOptionsFlow(config_entries.OptionsFlow):
             if action == "remove_show":      return await self.async_step_remove_show()
             if action == "update_platforms": return await self.async_step_update_platforms()
             if action == "update_tmdb":      return await self.async_step_update_tmdb()
-            return self.async_create_entry(title="", data={})
+            return self.async_create_entry(title="", data={})  # fallback
 
         return self.async_show_form(
             step_id="menu",
@@ -478,11 +481,10 @@ class WhatsonSeriesFilmsOptionsFlow(config_entries.OptionsFlow):
                     SelectSelectorConfig(
                         mode=SelectSelectorMode.LIST,
                         options=[
-                            {"value": "add_show",          "label": "Add a Series or Doc (TVmaze)"},
-                            {"value": "remove_show",        "label": "Remove a Series or Doc"},
-                            {"value": "update_platforms",   "label": "Change streaming platforms"},
-                            {"value": "update_tmdb",        "label": "Update TMDB key / country / language"},
-                            {"value": "done",               "label": "Done"},
+                            {"value": "add_show",         "label": "Añadir serie o documental (TVmaze)"},
+                            {"value": "remove_show",       "label": "Eliminar una serie o documental"},
+                            {"value": "update_platforms",  "label": "Cambiar plataformas de streaming"},
+                            {"value": "update_tmdb",       "label": "Actualizar clave TMDB / país / idioma"},
                         ],
                     )
                 ),
@@ -558,7 +560,9 @@ class WhatsonSeriesFilmsOptionsFlow(config_entries.OptionsFlow):
         country  = current.get(CONF_COUNTRY, "US")
         language = current.get(CONF_LANGUAGE, DEFAULT_LANGUAGE)
 
-        if api_key and not self._provider_map:
+        # Always fetch fresh from TMDB — self._provider_map from init only
+        # contains the selected platforms, not the full country list
+        if api_key and user_input is None:
             session = async_get_clientsession(self.hass)
             self._provider_map = await _fetch_providers(session, api_key, country, language)
 
@@ -649,3 +653,7 @@ class WhatsonSeriesFilmsOptionsFlow(config_entries.OptionsFlow):
         new_data = dict(self.config_entry.data)
         new_data[CONF_SHOWS] = self._shows
         self.hass.config_entries.async_update_entry(self.config_entry, data=new_data)
+        # Schedule reload as a background task so it runs after the flow closes
+        self.hass.async_create_task(
+            self.hass.config_entries.async_reload(self.config_entry.entry_id)
+        )

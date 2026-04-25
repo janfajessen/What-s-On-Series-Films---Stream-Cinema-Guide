@@ -33,6 +33,7 @@ async def async_setup_entry(
 
 
 class ShowPosterCamera(CoordinatorEntity[TVmazeCoordinator], Camera):
+    _attr_has_entity_name = False  # full name already in _attr_name
     """Camera entity that serves the TVmaze show poster image."""
 
     _attr_is_streaming = False
@@ -51,7 +52,8 @@ class ShowPosterCamera(CoordinatorEntity[TVmazeCoordinator], Camera):
         self._show_name = show_name
         self._entry_id  = entry_id
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_tvmaze_{show_id}_poster"
-        self._attr_name      = f"whatson_series_films {show_name} poster"
+        self._attr_name      = f"{show_name} Poster"
+        self.entity_id       = f"camera.whatson_series_films_{show_name.lower().replace(' ','_').replace('-','_')}_poster"
 
     @property
     def device_info(self) -> DeviceInfo:

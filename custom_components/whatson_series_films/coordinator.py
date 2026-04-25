@@ -158,11 +158,36 @@ class TMDBCoordinator(DataUpdateCoordinator[dict]):
                 _LOGGER.warning("No provider ID for '%s' — skipping.", platform_name)
                 continue
 
-            movies = await self._discover(
+            # Date-filtered: new releases added in the last TMDB_LOOKBACK_DAYS
+            movies_new = await self._discover(
                 api_key, country, language, provider_id, "movie", date_gte, date_lte)
-            shows  = await self._discover(
+            shows_new  = await self._discover(
                 api_key, country, language, provider_id, "tv",    date_gte, date_lte)
-            data[platform_name] = {"movies": movies, "shows": shows}
+
+            # Popular: top content available now regardless of release date
+            # (catches series like The Boys where first_air_date is old but
+            # the latest season is on the platform)
+            movies_pop = await self._discover_popular(
+                api_key, country, language, provider_id, "movie")
+            shows_pop  = await self._discover_popular(
+                api_key, country, language, provider_id, "tv")
+
+            # Merge: new releases first, then popular items not already present
+            seen_ids: set[int] = set()
+            movies: list[dict] = []
+            shows:  list[dict] = []
+            for item in movies_new + movies_pop:
+                if item["tmdb_id"] not in seen_ids:
+                    seen_ids.add(item["tmdb_id"])
+                    movies.append(item)
+            seen_ids.clear()
+            for item in shows_new + shows_pop:
+                if item["tmdb_id"] not in seen_ids:
+                    seen_ids.add(item["tmdb_id"])
+                    shows.append(item)
+
+            data[platform_name] = {"movies": movies[:TMDB_MAX_RESULTS],
+                                   "shows":  shows[:TMDB_MAX_RESULTS]}
 
         # ── Cinema: now playing + upcoming ───────────────────────────────────
         now_playing = await self._fetch_cinema(api_key, country, language, "now_playing")
@@ -175,6 +200,19 @@ class TMDBCoordinator(DataUpdateCoordinator[dict]):
         # ── Provider logos ───────────────────────────────────────────────────
         logos = await self._fetch_provider_logos(api_key, country, language, platforms, provider_map)
         data["__logos__"] = logos
+
+        # ── Global weekly trending (no country/platform filter) ───────────────
+        # Use user-configured language; HA frontend language as fallback
+        ha_lang = getattr(self.hass.config, "language", "en")
+        trend_language = language if language and language != "en-US" else (
+            f"{ha_lang}-{ha_lang.upper()}" if "-" not in ha_lang else ha_lang
+        )
+        trending_films  = await self._fetch_trending(api_key, trend_language, "movie")
+        trending_series = await self._fetch_trending(api_key, trend_language, "tv")
+        data["__trending__"] = {
+            "films":  trending_films,
+            "series": trending_series,
+        }
 
         return data
 
@@ -198,6 +236,44 @@ class TMDBCoordinator(DataUpdateCoordinator[dict]):
         }
         return await self._get_results(
             f"{TMDB_BASE_URL}/discover/{media_type}", params, TMDB_MAX_RESULTS)
+
+    async def _discover_popular(self, api_key: str, country: str, language: str,
+                               provider_id: int, media_type: str) -> list[dict]:
+        """Fetch top popular content on a platform (no date filter).
+
+        Used to surface currently-popular content like running series whose
+        first_air_date is old but whose latest season just dropped.
+        Sorted by popularity descending.
+        """
+        params = {
+            "api_key":              api_key,
+            "watch_region":         country,
+            "language":             language,
+            "with_watch_providers": str(provider_id),
+            "sort_by":              "popularity.desc",
+            "page": 1,
+        }
+        results = await self._get_results(
+            f"{TMDB_BASE_URL}/discover/{media_type}", params, TMDB_MAX_RESULTS)
+        # Tag items so cards can distinguish new vs popular
+        for item in results:
+            item["source"] = "popular"
+        return results
+
+    async def _fetch_trending(self, api_key: str, language: str,
+                              media_type: str) -> list[dict]:
+        """Fetch global weekly trending movies or TV shows from TMDB.
+
+        Uses /trending/{media_type}/week — no country or platform filter.
+        Returns up to 20 items (one page = the natural size of a trending list).
+        Items include a 'source': 'trending_week' tag.
+        """
+        params = {"api_key": api_key, "language": language}
+        results = await self._get_results(
+            f"{TMDB_BASE_URL}/trending/{media_type}/week", params, 20)
+        for item in results:
+            item["source"] = "trending_week"
+        return results
 
     async def _fetch_cinema(self, api_key: str, country: str, language: str,
                             endpoint: str) -> list[dict]:
