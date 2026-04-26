@@ -5,7 +5,7 @@
 
 ..........   <img src="https://github.com/janfajessen/What-s-On-Series-Films---Stream-Cinema-Guide---Home-Assistant/blob/b623505e98daec5410aafe7553caa792e2ba6631/brand/logo%402x.png" width="550"/>
 
-![Version](https://img.shields.io/badge/version-1.7.17-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.7.18-blue?style=for-the-badge)
 ![HA](https://img.shields.io/badge/Home%20Assistant-2024.1+-orange?style=for-the-badge&logo=home-assistant)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python)
